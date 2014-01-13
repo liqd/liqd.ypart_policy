@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<import-steps>
+    <import-step
+       id="liqd.ypart_policy"
+       title="liqd.ypart: Create initial content."
+       handler="liqd.ypart_policy.setuphandlers.setupVarious"
+       version="2013-04-13T11:45:03.454526">
+        <dependency step="content"/>
+    </import-step>  
+</import-steps>
+

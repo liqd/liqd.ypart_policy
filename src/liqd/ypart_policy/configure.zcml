@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="liqd.ypart_policy">
+
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <includeDependencies package="." />
+
+    <i18n:registerTranslations directory="locales"/>
+
+    <genericsetup:registerProfile
+        name="default"
+        title="liqd.ypart_policy"
+        directory="profiles/default"
+        description="Installs the liqd.ypart_policy package"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+</configure>
