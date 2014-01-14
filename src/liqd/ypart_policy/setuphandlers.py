@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from liqd.ypart_theme.interfaces import IProjekteViewletMarker
 from plone.dexterity.interfaces import IDexterityContent
 from plone.api.content import create
 from plone.app.layout.navigation.interfaces import INavigationRoot
@@ -31,7 +30,6 @@ def setupVarious(context):
         content = create(type='Document', container=site['de']['youthpart'],
                          id='front-page', title='Youthpart')
 
-        alsoProvides(content, IProjekteViewletMarker)
         content.reindexObject()
     if not site['de']['youthpart'].hasObject('national'):
         content = create(type='Folder', container=site['de']['youthpart'],
