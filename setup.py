@@ -46,7 +46,7 @@ setup(name='liqd.ypart_policy',
           'liqd.ypart_theme',
           'adhocracy.plone',
           'plone.app.contenttypes',
-          'collective.navroottabs'
+          'collective.navroottabs',
           'plone.app.iterate',
           # -*- Extra requirements: -*-
       ],
