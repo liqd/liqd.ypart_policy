@@ -7,5 +7,6 @@
         <dependency>profile-liqd.ypart_theme:default</dependency>
         <dependency>profile-adhocracy.plone:default</dependency>
         <dependency>profile-collective.navroottabs:default</dependency>
+        <dependency>profile-plone.app.iterate:plone.app.iterate</dependency>
     </dependencies>
 </metadata>

@@ -47,6 +47,7 @@ setup(name='liqd.ypart_policy',
           'adhocracy.plone',
           'plone.app.contenttypes',
           'collective.navroottabs'
+          'plone.app.iterate',
           # -*- Extra requirements: -*-
       ],
       extras_require={'test': ['plone.app.testing']},

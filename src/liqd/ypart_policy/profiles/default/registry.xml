@@ -1,0 +1,86 @@
+<registry>
+    <record name="collective.cover.controlpanel.ICoverSettings.available_tiles" interface="collective.cover.controlpanel.ICoverSettings" field="available_tiles">
+        <field type="plone.registry.field.List">
+            <default>
+                <element>collective.cover.banner</element>
+                <element>collective.cover.basic</element>
+                <element>collective.cover.carousel</element>
+                <element>collective.cover.collection</element>
+                <element>collective.cover.contentbody</element>
+                <element>collective.cover.embed</element>
+                <element>collective.cover.file</element>
+                <element>collective.cover.list</element>
+                <element>collective.cover.richtext</element>
+            </default>
+            <description>This tiles will be available for layout creation.</description>
+            <title>Available tiles</title>
+            <value_type type="plone.registry.field.Choice">
+                <vocabulary>collective.cover.EnabledTiles</vocabulary>
+            </value_type>
+        </field>
+        <value>
+            <element>collective.cover.banner</element>
+            <element>collective.cover.basic</element>
+            <element>collective.cover.carousel</element>
+            <element>collective.cover.collection</element>
+            <element>collective.cover.contentbody</element>
+            <element>collective.cover.embed</element>
+            <element>collective.cover.file</element>
+            <element>collective.cover.list</element>
+            <element>collective.cover.richtext</element>
+            <element>liqd.ypart_theme.projekte_tile</element>
+        </value>
+    </record>
+    <record name="collective.cover.controlpanel.ICoverSettings.layouts" interface="collective.cover.controlpanel.ICoverSettings" field="layouts">
+        <field type="plone.registry.field.Dict">
+            <key_type type="plone.registry.field.TextLine"/>
+            <value_type type="plone.registry.field.TextLine"/>
+        </field>
+        <value>
+            <element key="Empty layout">[{"type": "row", "class": "row", "children": [{"type": "group", "data":{"column-size":16, "layout-type":"column"}, "roles": ["Manager"]}]}]</element>
+        </value>
+    </record>
+    <record name="collective.cover.controlpanel.ICoverSettings.searchable_content_types" interface="collective.cover.controlpanel.ICoverSettings" field="searchable_content_types">
+        <field type="plone.registry.field.List">
+            <default>
+                <element>Collection</element>
+                <element>Document</element>
+                <element>File</element>
+                <element>Form Folder</element>
+                <element>Image</element>
+                <element>Link</element>
+                <element>News Item</element>
+            </default>
+            <description>Only objects of these content types will be searched on the content chooser.</description>
+            <required>False</required>
+            <title>Searchable Content Types</title>
+            <value_type type="plone.registry.field.Choice">
+                <vocabulary>collective.cover.AvailableContentTypes</vocabulary>
+            </value_type>
+        </field>
+        <value>
+            <element>Collection</element>
+            <element>Document</element>
+            <element>File</element>
+            <element>Image</element>
+            <element>Link</element>
+            <element>News Item</element>
+        </value>
+    </record>
+    <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
+        <field type="plone.registry.field.Set">
+            <default/>
+            <description>Enter a list of styles to appear in the style pulldown. Format is title|className, one per line.</description>
+            <title>Styles</title>
+            <value_type type="plone.registry.field.ASCIILine">
+                <title>CSS Class</title>
+            </value_type>
+        </field>
+        <value>
+            <element>Border|tile-edge</element>
+            <element>-Default-|tile-default</element>
+            <element>Shadow|tile-shadow</element>
+            <element>Dark Background|tile-dark</element>
+        </value>
+    </record>
+</registry>
