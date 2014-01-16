@@ -49,6 +49,7 @@ setup(name='liqd.ypart_policy',
           'collective.navroottabs',
           'plone.app.iterate',
           'plone.app.caching',
+          'plone.app.imagecropping',
           # -*- Extra requirements: -*-
       ],
       extras_require={'test': ['plone.app.testing']},
