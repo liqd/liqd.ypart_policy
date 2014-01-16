@@ -83,4 +83,86 @@
             <element>Dark Background|tile-dark</element>
         </value>
     </record>
+
+    <record name="plone.cachepurging.interfaces.ICachePurgingSettings.cachingProxies" interface="plone.cachepurging.interfaces.ICachePurgingSettings" field="cachingProxies">
+        <field type="plone.registry.field.Tuple">
+            <description>Provide the URLs of each proxy to which PURGE requests shoudl be sent.</description>
+            <title>Caching proxies</title>
+            <value_type type="plone.registry.field.URI"/>
+        </field>
+        <value>
+            <element>127.0.0.1:8000</element>
+        </value>
+    </record>
+    <record name="plone.cachepurging.interfaces.ICachePurgingSettings.domains" interface="plone.cachepurging.interfaces.ICachePurgingSettings" field="domains">
+        <field type="plone.registry.field.Tuple">
+            <default/>
+            <description>This option is only relevant if you are using virtual hosting and you have enabled the option to send PURGE requests with virtual hosting URLs above. If you your site is served on multiple domains e.g. http://example.org and http://www.example.org you may wish to purge both. If so, list all your domains here</description>
+            <missing_value/>
+            <required>False</required>
+            <title>Domains</title>
+            <value_type type="plone.registry.field.URI"/>
+        </field>
+        <value>
+            <element>https://ypart-staticpages.liqd.net:443</element>
+            <element>https://ypart-cms.liqd.net:443</element>
+            <element>https://ypart-zmi.liqd.net:443</element>
+            <element>http://ypart-staticpages.liqd.net:80</element>
+            <element>http://localhost:8000</element>
+            <element>http://127.0.0.1:8000</element>
+        </value>
+    </record>
+    <record name="plone.cachepurging.interfaces.ICachePurgingSettings.enabled" interface="plone.cachepurging.interfaces.ICachePurgingSettings" field="enabled">
+        <field type="plone.registry.field.Bool">
+            <default>True</default>
+            <description>If disabled, no purging will take place</description>
+            <title>Enable purging</title>
+        </field>
+        <value>True</value>
+    </record>
+    <record name="plone.cachepurging.interfaces.ICachePurgingSettings.virtualHosting" interface="plone.cachepurging.interfaces.ICachePurgingSettings" field="virtualHosting">
+        <field type="plone.registry.field.Bool">
+            <default>False</default>
+            <description>This option is only relevant if you are using virtual hosting with Zope's VirtualHostMonster. This relies on special tokens (VirtualHostBase and VirtualHostRoot) in the URL to instruct Zope about the types of URLs that the user sees. If virtual host URLs are in use and this option is set, PURGE requests will be sent to the caching proxy with the virtual hosting tokens in place. This makes sense if there is a web server in front of your caching proxy performing the rewrites necessary to translate a user-facing URL into a virtual hosting URL, so that the requests the caching proxy sees have the rewrite information in them. Conversely, if the rewrite is done in or behind the caching proxy, you want to disable this option, so that the PURGE requests use URLs that match those seen by the caching proxy as they come from the client.</description>
+            <title>Send PURGE requests with virtual hosting paths</title>
+        </field>
+        <value>True</value>
+    </record>
+    <record name="plone.caching.interfaces.ICacheSettings.enabled" interface="plone.caching.interfaces.ICacheSettings" field="enabled">
+        <field type="plone.registry.field.Bool">
+            <default>False</default>
+            <description>If not set, no caching operations will be attempted</description>
+            <title>Globally enabled</title>
+        </field>
+        <value>True</value>
+    </record>
+    <record name="plone.caching.interfaces.ICacheSettings.operationMapping" interface="plone.caching.interfaces.ICacheSettings" field="operationMapping">
+        <field type="plone.registry.field.Dict">
+            <description>Maps rule set names to operation names</description>
+            <key_type type="plone.registry.field.DottedName">
+                <title>Rule set name</title>
+            </key_type>
+            <title>Rule set/operation mapping</title>
+            <value_type type="plone.registry.field.DottedName">
+                <title>Caching operation name</title>
+            </value_type>
+        </field>
+        <value>
+            <element key="plone.resource">plone.app.caching.strongCaching</element>
+            <element key="plone.stableResource">plone.app.caching.strongCaching</element>
+            <element key="plone.content.itemView">plone.app.caching.weakCaching</element>
+            <element key="plone.content.feed">plone.app.caching.moderateCaching</element>
+            <element key="plone.content.folderView">plone.app.caching.weakCaching</element>
+            <element key="plone.content.file">plone.app.caching.moderateCaching</element>
+        </value>
+    </record>
+    <record name="plone.caching.operations.chain.operations">
+        <field type="plone.registry.field.List">
+            <description>A list of operations to call, in order</description>
+            <title>Operations</title>
+            <value_type type="plone.registry.field.DottedName"/>
+        </field>
+        <value/>
+    </record>
+
 </registry>

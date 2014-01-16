@@ -8,5 +8,6 @@
         <dependency>profile-adhocracy.plone:default</dependency>
         <dependency>profile-collective.navroottabs:default</dependency>
         <dependency>profile-plone.app.iterate:plone.app.iterate</dependency>
+        <dependency>profile-plone.app.caching:default</dependency>
     </dependencies>
 </metadata>
