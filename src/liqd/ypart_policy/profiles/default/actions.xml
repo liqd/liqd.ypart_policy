@@ -4,7 +4,7 @@
  <object name="portal_youthpart_tabs" meta_type="CMF Action Category">
   <property name="title"></property>
   <object name="youthpart" meta_type="CMF Action">
-   <property name="title">Überblick</property>
+   <property name="title">überblick</property>
    <property name="description"></property>
    <property
       name="url_expr">string:${globals_view/navigationRootUrl}</property>
@@ -15,7 +15,7 @@
    <property name="visible">True</property>
   </object>
   <object name="national" meta_type="CMF Action">
-   <property name="title">Youthpart</property>
+   <property name="title">youthpart</property>
    <property name="description"></property>
    <property
       name="url_expr">string:${globals_view/navigationRootUrl}/national</property>
@@ -26,7 +26,7 @@
    <property name="visible">True</property>
   </object>
   <object name="lokal" meta_type="CMF Action">
-   <property name="title">Youthpart #lokal</property>
+   <property name="title">youthpart #lokal</property>
    <property name="description"></property>
    <property
       name="url_expr">string:${globals_view/navigationRootUrl}/lokal</property>
@@ -37,7 +37,7 @@
    <property name="visible">True</property>
   </object>
   <object name="blog" meta_type="CMF Action">
-   <property name="title">Blog</property>
+   <property name="title">blog</property>
    <property name="description"></property>
    <property
       name="url_expr">string:${globals_view/navigationRootUrl}/blog</property>
